@@ -17,21 +17,25 @@ html{
     background-color: rgb(238, 240, 227);
 }
 .inn-div{
-    width:40vw;
+    width:70vw;
+
     background-color: #fff;
-    padding:3rem 8rem;
+    padding:2rem 4rem;
     border-radius:1rem;
     box-shadow:0 1rem 1rem -0.7rem  rgba(0,0,0,0.4)
 }
 .inn-div h1{
-    font-size:3.5rem;
+    font-size:2.5vw;
     font-weight:400;
-    margin:1rem 0 4rem 0;  
+    margin:1rem 0 1rem 0;  
 }
 .inn-div li{
  font-size:2rem;
- margin-top:1.5rem;
+ position:relative;
+ top:2rem;
  list-style:none;
+ margin:2rem 0rem;
+ font-weight: 400;
 }
 input{
     cursor:pointer;
@@ -41,7 +45,7 @@ input{
    display:block;
     margin:auto;
     outline:none;
-    font-weight:400; 
+    font-weight:390; 
     font-size:2rem;
     margin-top:3rem;
     border:none;
@@ -73,4 +77,14 @@ h2{
 }
 
 
-
+@media only screen and (max-width: 747px){
+    .inn-div{
+        width:90vw;
+    }
+    h1{
+       word-spacing: .1em;
+    }
+    .inn-div li{
+        top:1rem;
+    }   
+}

@@ -43,7 +43,6 @@ const submit=document.querySelector('#submit');
 let count=0;
 const loadQuestion=()=>{
      let questionList=myQuiz[count];
-     console.log(questionList);
      questions.innerText=questionList.question;
      option1.innerText=questionList.A;
      option2.innerText=questionList.B;
@@ -59,19 +58,27 @@ const checkedAnswer= ()=>{
         answer=curAns.id;
     }
    })
+
    return answer;
 }
 const hided=document.querySelector('#hidedDiv');
 submit.addEventListener('click',()=>{
     let ans=checkedAnswer();
+    let flag=document.getElementById(ans);
     if(ans==myQuiz[count].ans){
         score++;
     }
+    flag.checked=false;
     count++;
     if(count<myQuiz.length){
         loadQuestion(); 
     }
     else{
+        ques.forEach((btn)=>{
+            console.log(btn);
+            btn.disabled=true;
+        })
+        submit.style.display="none";
         hided.innerHTML=` <div class="scorearea" id="showscore">
         <h2>your score is ${score}/${myQuiz.length}✌️</h2>
         <button class="btn" onclick="location.reload()">Play Again</button></div>`;
